@@ -39,7 +39,7 @@ jobs:
         shell: cmd
       - name: Baixar WinSW
         run: |
-          wget https://github.com/winsw/winsw/releases/latest/download/winsw.exe -O winsw.exe
+            Invoke-WebRequest -Uri "https://github.com/winsw/winsw/releases/latest/download/winsw.exe" -OutFile "winsw.exe"
       - name: Download Artifact
         if: success()
         uses: actions/download-artifact@v2
