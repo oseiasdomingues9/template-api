@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-jar
-          path: build/libs/myapp.jar
+          path: build/libs/hospital-care-api.jar
 
   deploy:
     runs-on: self-hosted       
