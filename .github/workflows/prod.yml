@@ -31,4 +31,4 @@ jobs:
          uses: actions/download-artifact@v2
          with:
             name: hospital-care.jar
-            path: build/libs
+            path: /home/runner/work/template-api/template-api/build/libs/hospital-care-api.jar
