@@ -19,7 +19,8 @@ jobs:
         run: ./gradlew build
 
   deploy:
-    runs-on: self-hosted        
+    runs-on: self-hosted       
+    needs: build 
     steps:
        - name: Download Artifact
          uses: actions/download-artifact@v2
