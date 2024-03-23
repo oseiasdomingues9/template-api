@@ -37,6 +37,9 @@ jobs:
             exit 0
           )
         shell: cmd
+      - name: Baixar WinSW
+        run: |
+          wget https://github.com/winsw/winsw/releases/latest/download/winsw.exe -O winsw.exe
       - name: Download Artifact
         if: success()
         uses: actions/download-artifact@v2
