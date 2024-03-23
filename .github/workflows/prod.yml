@@ -27,9 +27,20 @@ jobs:
     runs-on: self-hosted       
     needs: build 
     steps:
-       - name: checkout folder
-         run: dir
-       - name: Download Artifact
-         uses: actions/download-artifact@v2
-         with:
-            name: hospital-care-api.jar
+      - name: Check if artifact exists
+        run: |
+          if exist "D:\Unidac\hospital-care-api.jar" (
+            echo "Arquivo JAR encontrado. Iniciando download..."
+            exit 0
+          ) else (
+            echo "Arquivo JAR não encontrado. Abortando download."
+            exit 1
+          )
+        shell: cmd
+      - name: Download Artifact
+        if: success()
+        uses: actions/download-artifact@v2
+        with:
+          name: hospital-care-api.jar
+          path: D:\Unidac
+      
