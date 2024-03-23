@@ -30,11 +30,11 @@ jobs:
       - name: Check if artifact exists
         run: |
           if exist "D:\Unidac\hospital-care-api.jar" (
-            echo "Arquivo JAR encontrado. Iniciando download..."
-            exit 0
-          ) else (
-            echo "Arquivo JAR não encontrado. Abortando download."
+            echo "Arquivo JAR não encontrado. Iniciando download."
             exit 1
+          ) else (
+            echo "Arquivo JAR encontrado. Abortando  download..."
+            exit 0
           )
         shell: cmd
       - name: Download Artifact
